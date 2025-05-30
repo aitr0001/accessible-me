@@ -1,27 +1,26 @@
 body {
   font-family: 'Roboto', Helvetica, sans-serif;
-  background-color: grey;
+  background-color: #333; /* Improved contrast */
+  color: #fff; /* Improved contrast */
   margin: 0;
   padding: 0;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   font-family: 'Stick No Bills', 'Roboto', Helvetica, sans-serif;
+  color: #FFD700; /* Gold for headings, high contrast */
 }
 
 .container {
   max-width: 1080px;
   margin: 0 auto;
   padding: 0 1rem;
+  background: #222; /* High contrast background */
 }
 
 img {
   width: 100%;
+  border-radius: 8px;
 }
 
 .main-nav ul {
@@ -39,9 +38,18 @@ img {
 
 .main-nav ul li a {
   display: block;
-  color: inherit;
+  color: #FFD700; /* Gold for links */
   text-decoration: none;
   font-size: 1.25rem;
+  padding: 0.5rem 0;
+  transition: background 0.2s, color 0.2s;
+}
+
+.main-nav ul li a:focus,
+.main-nav ul li a:hover {
+  background: #FFD700;
+  color: #222;
+  outline: 2px solid #FFD700;
 }
 
 form input,
@@ -50,6 +58,16 @@ form textarea {
   width: 100%;
   margin-bottom: 1rem;
   padding: .5rem 1rem;
+  border-radius: 4px;
+  border: 1px solid #FFD700;
+  background: #111;
+  color: #fff;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #FFD700;
+  outline: 2px solid #FFD700;
 }
 
 form textarea {
@@ -60,12 +78,47 @@ form textarea {
 }
 
 form button {
-  background: none;
-  border: 2px solid black;
+  background: #FFD700;
+  color: #222;
+  border: 2px solid #FFD700;
   padding: 1rem;
   text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+form button:hover,
+form button:focus {
+  background: #222;
+  color: #FFD700;
+  outline: 2px solid #FFD700;
 }
 
 .site-footer {
   padding: 2rem 0;
+  text-align: center;
+  color: #FFD700;
 }
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  background: #FFD700;
+  color: #222;
+  padding: 8px 16px;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  left: 16px;
+  top: 16px;
+  width: auto;
+  height: auto;
+  font-size: 1rem;
+  border-radius: 4px;
